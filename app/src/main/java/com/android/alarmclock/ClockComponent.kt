@@ -18,12 +18,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlin.math.min
 
+val red = Color(0xFFB81522)
+val blue = Color(0xFF1C3064)
+val clockblue = Color(0xFF1C6464)
+val lightblue = Color(0xFF40C4FF)
+val margenta = Color(0xFFB920A9)
+val orangered = Color(0xFFFF5252)
 @Composable
 fun AnalogClock(
     hour: Float,
     minute: Float,
-    borderColors: List<Color> = listOf(Color.Red, Color.Green, Color.Blue, Color.Yellow, Color.Magenta)
-) {
+    borderColors: List<Color> = listOf(red,  lightblue, margenta, orangered)) {
     Box(
         modifier = Modifier
             .fillMaxSize(0.7f)
@@ -35,7 +40,7 @@ fun AnalogClock(
             val radius = diameter / 2
 
 
-            val borderWidth = 1.dp.toPx()
+            val borderWidth = 0.5.dp.toPx()
             val segmentAngle = 360f / borderColors.size
 
             borderColors.forEachIndexed { index, color ->
